@@ -28,11 +28,6 @@
 					e.preventDefault();
 					window.location.href = "service.html";
 				});
-                
-                $("#sidebar-dropdown-toggle").click(function(e) {
-                    e.preventDefault();
-                    $("#sidebar-menu").toggleClass("toggled");
-                });
             });
         </script>
 	</head>
@@ -46,14 +41,7 @@
                     <li><a href="service.html">Service</a></li>
                     <li><a href="#">Dues</a></li>
                     <li><a href="#">Attendance</a></li>
-                    <li class="sidebar-dropdown">
-                        <a href="#sidebar-dropdown-toggle" class="sidebar-dropdown-toggle" id="sidebar-dropdown-toggle">Executive roles <span class="caret"></span></a>
-                        <ul class="sidebar-dropdown-menu" id="sidebar-menu">
-                            <li><a href="#">Archon</a></li>
-                            <li><a href="#">Vice Archon</a></li>
-                            <li><a href="#">Treasurer</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Executive roles</a></li>
                     <li><a href="#">Settings</a></li>
                 </ul>
             </div>
@@ -70,9 +58,6 @@
 						</a>
 						<a class="navbar-brand" href="index.html" id="brand">Pi Kappa Phi: Kappa Alpha</a>
 					</div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
 				</div>
             </nav>
             
