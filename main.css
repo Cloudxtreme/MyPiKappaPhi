@@ -106,7 +106,7 @@ bootstrap css download
     background: none;
 }
 
-@media(min-width:768px) {
+@media(max-width:0px) {
     #wrapper {
         padding-left: 250px;
     }
@@ -143,12 +143,6 @@ bootstrap css download
     color: #FFF;
 }
 
-@media screen and (min-width:768px) {
-	.navbar-header .navbar-brand {
-		display: none;
-	}
-}
-
 .navbar-header .navbar-brand:hover,
 .navbar-header .navbar-brand:focus {
     color: #FFF;
@@ -166,7 +160,8 @@ bootstrap css download
 }
 
 .navbar-toggle {
-    margin-left: 25px;
+	display: block;
+	margin-left: 10px;
 }
 
 .navbar-collapse.collapse {
