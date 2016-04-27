@@ -92,6 +92,14 @@
 .sidebar-nav > .sidebar-brand a {
     color: #FFF;
 }
+xs screen size
+
+
+bootstrap media queries sizes
+@screen-sm-min
+bootstrap sass media queries
+bootstrap css download
+
 
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
@@ -195,4 +203,25 @@
     right: 10px;
     height: 191px;
     width: 320px;
+}
+
+@media screen and (max-width:900px) {
+	.logo {
+		display: none;
+	}
+}
+
+.brandon {
+	font-family: Brandon, sans-serif;
+}
+
+.btn-primary {
+	background-color: #005596;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus, {
+    background: rgba(255,255,255,0.2);
 }

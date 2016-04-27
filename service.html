@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>MyPiKappaPhi</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="radial.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+        <script>
+            $(function() {
+                window.percent = function() {
+                    $('#radial-service').attr('data-progress', Math.floor(7/15 * 100));
+                    $('#radial-dues').attr('data-progress', Math.floor(300/400 * 100));
+                    $('#radial-attendance').attr('data-progress', Math.floor(89/100 * 100));
+                }
+                setTimeout(window.percent, 200);
+            });
+        </script>
+	</head>
+
+	<body>
+        <div id="wrapper">     
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="index.html">Pi Kappa Phi: Kappa Alpha</a></li>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li class="active"><a href="#">Service</a></li>
+                    <li><a href="#">Dues</a></li>
+                    <li><a href="#">Attendance</a></li>
+                    <li><a href="#">Executive roles</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+            
+            <nav class="navbar navbar-default navbar-static-top">
+            </nav>
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Service hours</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="radial-progress" id="radial-service" data-progress="0">
+                                    <div class="circle">
+                                        <div class="mask full">
+                                            <div class="fill"></div>
+                                        </div>
+                                        <div class="mask half">
+                                            <div class="fill"></div>
+                                            <div class="fill fix"></div>
+                                        </div>
+                                        <div class="shadow"></div>
+                                    </div>
+                                    <div class="inset">
+                                        <div class="percentage">
+                                            <div class="numbers">
+                                                <span>7/15</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="row brandon">
+					<div class="col-xs-6 col-md-4">
+						<h1>Service hours reporting form</h1>
+						<form id="serviceform">
+							<fieldset class="form-group">
+								<label for="name">Name</label>
+								<input type="text" class="form-control" id="name">
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="date">Date</label>
+								<input type="text" class="form-control" id="date" placeholder="MM/DD/YYYY">
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="activity">Activity name</label>
+								<input type="text" class="form-control" id="activity">
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="benefactor">Benefactor</label>
+								<input type="text" class="form-control" id="activity" placeholder="Who you served">
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="servicedesc">Description of Service</label>
+								<textarea class="form-control" id="servicedesc" rows="3"></textarea>
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="hours">Hours served</label>
+								<input type="text" class="form-control" id="hours" placeholder="Ex. 3.5">
+							</fieldset>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+        </div>
+		
+        <img class="logo" src="pkplogo.png">
+	</body>
+</html>
