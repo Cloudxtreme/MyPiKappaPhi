@@ -154,8 +154,8 @@ bootstrap css download
 
 .navbar-header .navbar-brand:hover,
 .navbar-header .navbar-brand:focus {
-    color: #FFF;
-    background: rgba(255,255,255,0.2);
+    color: #E7A614;
+    background: #005596;
 }
 
 .navbar {
@@ -213,6 +213,10 @@ bootstrap css download
     background-color: #005596;
 }
 
+.panel-default:hover .panel-heading {
+    color: #E7A614;
+}
+
 .logo {
     position: fixed;
     bottom: 10px;
@@ -251,5 +255,5 @@ bootstrap css download
 }
 
 #service-button {
-    display: block;
+    margin-bottom: 10px;
 }
