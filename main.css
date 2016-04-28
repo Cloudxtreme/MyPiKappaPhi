@@ -209,11 +209,11 @@ bootstrap css download
 }
 
 .logo {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     right: 10px;
-    height: 191px;
-    width: 320px;
+    height: 162px;
+    width: 272px;
 }
 
 @media screen and (max-width:900px) {
@@ -239,4 +239,12 @@ bootstrap css download
 
 #serviceform {
 	margin: 10px;
+}
+
+#row-service-form {
+    display: none;
+}
+
+#service-button {
+    display: block;
 }

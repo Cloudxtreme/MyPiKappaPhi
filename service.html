@@ -106,36 +106,90 @@
                         </div>
                     </div>
                 </div>
-				<div class="row brandon">
-					<div class="col-xs-10 col-sm-8 col-md-4">
-						<h1>Service hours reporting form</h1>
-						<form id="serviceform">
-							<fieldset class="form-group">
-								<label for="name">Name</label>
-								<input type="text" class="form-control" id="name">
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="date">Date</label>
-								<input type="text" class="form-control" id="date" placeholder="MM/DD/YYYY">
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="activity">Activity name</label>
-								<input type="text" class="form-control" id="activity">
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="benefactor">Benefactor</label>
-								<input type="text" class="form-control" id="activity" placeholder="Who you served">
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="servicedesc">Description of Service</label>
-								<textarea class="form-control" id="servicedesc" rows="3"></textarea>
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="hours">Hours served</label>
-								<input type="text" class="form-control" id="hours" placeholder="Ex. 3.5">
-							</fieldset>
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</form>
+                <div class="row brandon">
+                    <div class="col-xs-10 col-sm-8 col-md-4">
+						<h1>Service record</h1>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Activity</th>
+                                    <th>Benefactor</th>
+                                    <th>Date</th>
+                                    <th>Hours</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="warning">
+                                    <td>Replay For Kids</td>
+                                    <td>Disabled children all over ohio</td>
+                                    <td>2/8/2016</td>
+                                    <td>2.5</td>
+                                    <td>Pending</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>Ushering</td>
+                                    <td>Violins of Hope</td>
+                                    <td>9/26/2015</td>
+                                    <td>4.0</td>
+                                    <td>Accepted</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>Case EMS</td>
+                                    <td>Case community</td>
+                                    <td>9/8/2015</td>
+                                    <td>8.0</td>
+                                    <td>Rejected</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>Nepal Family Day</td>
+                                    <td>Asia Society Hong Kong Center</td>
+                                    <td>6/14/2015</td>
+                                    <td>12.0</td>
+                                    <td>Accepted</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-primary-outline" data-toggle="modal" data-target="#serviceModal"><span class="glyphicon glyphicon-plus"></span> Submit service hours</button>
+                    </div>
+				</div>
+				<div class="modal fade brandon" id="serviceModal" role="dialog" id="serviceModal">
+					<div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Service hours reporting form</h4>
+                            </div> 
+                            <div class="modal-body">
+                                <form id="serviceform">
+                                    <fieldset class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="date">Date</label>
+                                        <input type="text" class="form-control" id="date" placeholder="MM/DD/YYYY">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="activity">Activity name</label>
+                                        <input type="text" class="form-control" id="activity">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="benefactor">Benefactor</label>
+                                        <input type="text" class="form-control" id="activity" placeholder="Who you served">
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="servicedesc">Description of Service</label>
+                                        <textarea class="form-control" id="servicedesc" rows="3"></textarea>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label for="hours">Hours served</label>
+                                        <input type="text" class="form-control" id="hours" placeholder="Ex. 3.5">
+                                    </fieldset>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>
