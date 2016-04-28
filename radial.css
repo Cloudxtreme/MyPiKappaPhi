@@ -5,6 +5,10 @@
   background-color: #d6dadc;
   border-radius: 50%;
 }
+
+.radial-progress { transition: all .2s ease-in-out; }
+.radial-progress:hover { transform: scale(1.1); }
+
 .radial-progress .circle .mask,
 .radial-progress .circle .fill,
 .radial-progress .circle .shadow {
