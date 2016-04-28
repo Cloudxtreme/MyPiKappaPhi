@@ -169,8 +169,8 @@ bootstrap css download
 
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
-    color: #FFF;
-    background: rgba(255,255,255,0.2);
+    color: #E7A614;
+    background: #005596;
 }
 
 .navbar-toggle {
@@ -256,4 +256,10 @@ bootstrap css download
 
 #service-button {
     margin-bottom: 10px;
+	color: #FFF;
+	background: #005596;
+}
+
+#service-button:hover {
+	color: #E7A614;
 }
