@@ -23,7 +23,7 @@
 				});
                           
                 $(document).click(function (e) {
-                    if (($(e.target).closest("#wrapper").length === 0) && (!$(e.target).hasClass("navbar-toggle")) && ($("#wrapper").hasClass("toggled"))) {
+                    if (($(e.target).closest("#wrapper").length === 0) && (!$(e.target).hasClass("navbar-toggle")) && (!$(e.target).hasClass("icon-bar")) && ($("#wrapper").hasClass("toggled"))) {
                         $("#wrapper").toggleClass("toggled");
                     }
                 });
@@ -37,27 +37,6 @@
 	</head>
 
 	<body>
-        <div id="wrapper">     
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand"><a href="#"></a></li>
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="service.html">Service</a></li>
-                    <li class="active"><a href="#">Dues</a></li>
-                    <li><a href="attendance.html">Attendance</a></li>
-                    <li class="sidebar-dropdown">
-                        <a href="#sidebar-dropdown-toggle" class="sidebar-dropdown-toggle" id="sidebar-dropdown-toggle">Executive roles <span class="caret"></span></a>
-                        <ul class="sidebar-dropdown-menu" id="sidebar-menu">
-                            <li><a href="#">Archon</a></li>
-                            <li><a href="#">Vice Archon</a></li>
-                            <li><a href="#">Treasurer</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </div>
-		</div>
-		
 		<div>
             <nav class="navbar navbar-default navbar-static-top">
 				<div class="container-fluid">
@@ -74,6 +53,26 @@
                     </ul>
 				</div>
             </nav>
+			
+			<div id="wrapper">     
+				<div id="sidebar-wrapper">
+					<ul class="sidebar-nav">
+						<li><a href="index.html">Dashboard</a></li>
+						<li><a href="service.html">Service</a></li>
+						<li class="active"><a href="#">Dues</a></li>
+						<li><a href="attendance.html">Attendance</a></li>
+						<li class="sidebar-dropdown">
+							<a href="#sidebar-dropdown-toggle" class="sidebar-dropdown-toggle" id="sidebar-dropdown-toggle">Executive roles <span class="caret"></span></a>
+							<ul class="sidebar-dropdown-menu" id="sidebar-menu">
+								<li><a href="#">Archon</a></li>
+								<li><a href="#">Vice Archon</a></li>
+								<li><a href="#">Treasurer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Settings</a></li>
+					</ul>
+				</div>
+			</div>
             
             <div class="container-fluid">
                 <div class="row">

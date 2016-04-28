@@ -158,6 +158,10 @@ bootstrap css download
     background: rgba(255,255,255,0.2);
 }
 
+.navbar {
+	margin-bottom: 0;
+}
+
 .navbar .nav > li > a {
     font-size: 20px;
     color: #FFF;
@@ -197,6 +201,7 @@ bootstrap css download
 
 .panel-default {
     width: 150px;
+	margin-top: 15px;
 }
 
 .panel-heading {
