@@ -1,6 +1,6 @@
 @font-face {
     font-family: Brandon;
-    src: url('brandon.otf');
+    src: url('../fonts/brandon.otf');
 }
 
 #wrapper {
