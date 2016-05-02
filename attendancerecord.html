@@ -13,7 +13,7 @@
         <script>
             $(function() {
                 window.percent = function() {
-                    $('#radial-attendance').attr('data-progress', Math.floor(3/4 * 100));
+                    $('#radial-service').attr('data-progress', Math.floor(16/16 * 100));
                 }
                 setTimeout(window.percent, 200);
 				
@@ -53,21 +53,21 @@
                     </ul>
 				</div>
             </nav>
-			
+            
 			<div id="wrapper">     
 				<div id="sidebar-wrapper">
 					<ul class="sidebar-nav">
 						<li><a href="index.html">Dashboard</a></li>
 						<li><a href="service.html">Service</a></li>
 						<li><a href="dues.html">Dues</a></li>
-						<li class="active"><a href="#">Attendance</a></li>
+						<li><a href="attendance.html">Attendance</a></li>
 						<li><a href="#">Archon</a></li>
 						<li><a href="#">Vice Archon</a></li>
 						<li><a href="#">Treasurer</a></li>
 						<li><a href="#sidebar-dropdown-toggle" class="sidebar-dropdown-toggle" id="sidebar-dropdown-toggle">Secretary <span class="caret"></span></a></li>
 							<ul class="sidebar-dropdown-menu" id="sidebar-menu">
 								<li><a href="eventrecord.html">Event record</a></li>
-								<li><a href="attendancerecord.html">Attendance record</a></li>
+								<li class="active"><a href="#">Attendance record</a></li>
 							</ul>
 						<li><a href="#">Warden</a></li>
 						<li><a href="#">Historian</a></li>
@@ -79,80 +79,40 @@
 					</ul>
 				</div>
 			</div>
-            
+			
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Attendance</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="radial-progress" id="radial-attendance" data-progress="0">
-                                    <div class="circle">
-                                        <div class="mask full">
-                                            <div class="fill"></div>
-                                        </div>
-                                        <div class="mask half">
-                                            <div class="fill"></div>
-                                            <div class="fill fix"></div>
-                                        </div>
-                                        <div class="shadow"></div>
-                                    </div>
-                                    <div class="inset">
-                                        <div class="percentage">
-                                            <div class="numbers">
-                                                <span>75%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<div class="row brandon">
+                <div class="row brandon">
                     <div class="col-xs-10 col-sm-8 col-md-4">
-						<h1>Attendance record</h1>
+						<h1>Chapter Attendance</h1>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Event</th>
-                                    <th>Date</th>
-                                    <th>Present</th>
-                                    <th>Excused</th>
+                                    <th>Name</th>
+                                    <th>Percent Attendance</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="info">
-                                    <td>Chapter</td>
-                                    <td>05/01/2016</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                </tr>
                                 <tr class="success">
-                                    <td>Chapter</td>
-                                    <td>04/24/2016</td>
-                                    <td>Yes</td>
-                                    <td>N/A</td>
+                                    <td>Adam Beck</td>
+                                    <td>95%</td>
                                 </tr>
+                            </tbody>
+							<tbody>
                                 <tr class="success">
-                                    <td>Chapter</td>
-                                    <td>04/17/2016</td>
-                                    <td>Yes</td>
-                                    <td>N/A</td>
+                                    <td>Rob Belles</td>
+                                    <td>92%</td>
                                 </tr>
+                            </tbody>
+							<tbody>
                                 <tr class="danger">
-                                    <td>Chapter</td>
-                                    <td>04/10/2016</td>
-                                    <td>No</td>
-                                    <td>No</td>
+                                    <td>Noah Boksansky</td>
+                                    <td>76%</td>
                                 </tr>
+                            </tbody>
+							<tbody>
                                 <tr class="warning">
-                                    <td>Chapter</td>
-                                    <td>04/03/2016</td>
-                                    <td>No</td>
-                                    <td>Yes</td>
+                                    <td>Noah Burke</td>
+                                    <td>82%</td>
                                 </tr>
                             </tbody>
                         </table>
