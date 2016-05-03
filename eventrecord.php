@@ -9,81 +9,17 @@
         <link rel="stylesheet" href="css/radial.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        
-        <script>
-            $(function() {
-                window.percent = function() {
-                    $('#radial-service').attr('data-progress', Math.floor(16/16 * 100));
-                }
-                setTimeout(window.percent, 200);
-				
-				$("#menu-toggle").click(function(e) {
-					e.preventDefault();
-					$("#wrapper").toggleClass("toggled");
-				});
-                          
-                $(document).click(function (e) {
-                    if (($(e.target).closest("#wrapper").length === 0) && (!$(e.target).hasClass("navbar-toggle")) && (!$(e.target).hasClass("icon-bar")) && ($("#wrapper").hasClass("toggled"))) {
-                        $("#wrapper").toggleClass("toggled");
-                    }
-                });
-                
-                $("#sidebar-dropdown-toggle").click(function(e) {
-                    e.preventDefault();
-                    $("#sidebar-menu").toggleClass("toggled");
-                });
-            });
-        </script>
+		<script src="nav-script.js"></script>
 	</head>
 
 	<body>		
 		<div>
-            <nav class="navbar navbar-default navbar-static-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a href="#menu-toggle" class="pull-left navbar-toggle" id="menu-toggle">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-						<a class="navbar-brand" href="index.html" id="brand">Pi Kappa Phi: Kappa Alpha</a>
-					</div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
-				</div>
-            </nav>
-            
-			<div id="wrapper">     
-				<div id="sidebar-wrapper">
-					<ul class="sidebar-nav">
-						<li><a href="index.html">Dashboard</a></li>
-						<li><a href="service.html">Service</a></li>
-						<li><a href="dues.html">Dues</a></li>
-						<li><a href="attendance.html">Attendance</a></li>
-						<li><a href="#">Archon</a></li>
-						<li><a href="#">Vice Archon</a></li>
-						<li><a href="#">Treasurer</a></li>
-						<li><a href="#sidebar-dropdown-toggle" class="sidebar-dropdown-toggle" id="sidebar-dropdown-toggle">Secretary <span class="caret"></span></a></li>
-							<ul class="sidebar-dropdown-menu" id="sidebar-menu">
-								<li class="active"><a href="#">Event record</a></li>
-								<li><a href="attendancerecord.html">Attendance record</a></li>
-							</ul>
-						<li><a href="#">Warden</a></li>
-						<li><a href="#">Historian</a></li>
-						<li><a href="#">Chaplain</a></li>
-						<li><a href="#">Philanthropy Chairman</a></li>
-						<li><a href="#">Risk Management Chairman</a></li>
-						<li><a href="#">Standards Board Chairman</a></li>
-						<li><a href="#">Settings</a></li>
-					</ul>
-				</div>
-			</div>
+            <?php include 'navigation.html';?>
 			
             <div class="container-fluid">
                 <div class="row brandon">
                     <div class="col-xs-10 col-sm-8 col-md-4">
-						<h1>Event record</h1>
+						<h1>Event attednance record</h1>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -132,11 +68,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-primary-outline" data-toggle="modal" data-target="#serviceModal" id="service-button">
+                        <button type="button" class="btn btn-primary-outline button-colored" data-toggle="modal" data-target="#formModal">
 						<span class="glyphicon glyphicon-plus"></span> Add new event</button>
                     </div>
 				</div>
-				<div class="modal fade brandon" id="serviceModal" role="dialog" id="serviceModal">
+				<div class="modal fade brandon" role="dialog" id="formModal">
 					<div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -144,7 +80,7 @@
                                 <h4 class="modal-title">Event Attendance Form</h4>
                             </div> 
                             <div class="modal-body">
-                                <form id="serviceform">
+                                <form class="modal-form">
                                     <fieldset class="form-group">
                                         <label for="name">Event name</label>
                                         <input type="text" class="form-control" id="name">
@@ -156,7 +92,7 @@
 									<table class="table table-hover">
 										<thead>
 											<tr>
-												<th>Name</th>
+												<th>Brother</th>
 												<th>Present</th>
 												<th>Absent</th>
 												<th>Excused</th>
@@ -198,7 +134,7 @@
 										</tbody>
 									</table>
 									
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary button-colored">Submit</button>
                                 </form>
                             </div>
                         </div>

@@ -242,24 +242,24 @@ bootstrap css download
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:visited,
-.btn-primary:focus, {
+.btn-primary:focus {
     background: rgba(255,255,255,0.2);
 }
 
-#serviceform {
+.modal-form {
 	margin: 10px;
 }
 
-#row-service-form {
-    display: none;
-}
-
-#service-button {
+.button-colored {
     margin-bottom: 10px;
 	color: #FFF;
 	background: #005596;
 }
 
-#service-button:hover {
+.button-colored:hover,
+.button-colored:active,
+.button-colored:visited,
+.button-colored:focus {
 	color: #E7A614;
+	background: #005596;
 }

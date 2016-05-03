@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/radial.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="nav-script.js"></script>
         
         <script>
             $(function() {
@@ -16,69 +17,13 @@
                     $('#radial-dues').attr('data-progress', Math.floor(320/420 * 100));
                 }
                 setTimeout(window.percent, 200);
-				
-				$("#menu-toggle").click(function(e) {
-					e.preventDefault();
-					$("#wrapper").toggleClass("toggled");
-				});
-                          
-                $(document).click(function (e) {
-                    if (($(e.target).closest("#wrapper").length === 0) && (!$(e.target).hasClass("navbar-toggle")) && (!$(e.target).hasClass("icon-bar")) && ($("#wrapper").hasClass("toggled"))) {
-                        $("#wrapper").toggleClass("toggled");
-                    }
-                });
-                
-                $("#sidebar-dropdown-toggle").click(function(e) {
-                    e.preventDefault();
-                    $("#sidebar-menu").toggleClass("toggled");
-                });
             });
         </script>
 	</head>
 
 	<body>
 		<div>
-            <nav class="navbar navbar-default navbar-static-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a href="#menu-toggle" class="pull-left navbar-toggle" id="menu-toggle">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-						<a class="navbar-brand" href="index.html" id="brand">Pi Kappa Phi: Kappa Alpha</a>
-					</div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
-				</div>
-            </nav>
-			
-			<div id="wrapper">     
-				<div id="sidebar-wrapper">
-					<ul class="sidebar-nav">
-						<li><a href="index.html">Dashboard</a></li>
-						<li><a href="service.html">Service</a></li>
-						<li class="active"><a href="#">Dues</a></li>
-						<li><a href="attendance.html">Attendance</a></li>
-						<li><a href="#">Archon</a></li>
-						<li><a href="#">Vice Archon</a></li>
-						<li><a href="#">Treasurer</a></li>
-						<li><a href="#sidebar-dropdown-toggle" class="sidebar-dropdown-toggle" id="sidebar-dropdown-toggle">Secretary <span class="caret"></span></a></li>
-							<ul class="sidebar-dropdown-menu" id="sidebar-menu">
-								<li><a href="eventrecord.html">Event record</a></li>
-								<li><a href="attendancerecord.html">Attendance record</a></li>
-							</ul>
-						<li><a href="#">Warden</a></li>
-						<li><a href="#">Historian</a></li>
-						<li><a href="#">Chaplain</a></li>
-						<li><a href="#">Philanthropy Chairman</a></li>
-						<li><a href="#">Risk Management Chairman</a></li>
-						<li><a href="#">Standards Board Chairman</a></li>
-						<li><a href="#">Settings</a></li>
-					</ul>
-				</div>
-			</div>
+            <?php include 'navigation.html';?>
             
             <div class="container-fluid">
                 <div class="row">
