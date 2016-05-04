@@ -42,7 +42,7 @@
 		<div>
             <?php include 'navigation.html';?>
             
-            <div class="container-fluid">
+            <div class="container-fluid" id="container-index">
                 <div class="row">
                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                         <div class="panel panel-default" id="panel-service">

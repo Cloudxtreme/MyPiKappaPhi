@@ -17,16 +17,20 @@
 <div id="wrapper">     
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
+			<li class="sidebar-brand"><a href="index.php">Pi Kappa Phi: Kappa Alpha </a></li>
 			<li><a href="index.php">Dashboard</a></li>
-			<li><a href="service.php">Service</a></li>
-			<li><a href="dues.php">Dues</a></li>
-			<li><a href="attendance.php">Attendance</a></li>
+			<li><a href="service.php">MyService</a></li>
+			<li><a href="dues.php">MyDues</a></li>
+			<li><a href="attendance.php">MyAttendance</a></li>
 			<li><a href="#">Archon</a></li>
 			<li><a href="#">Vice Archon</a></li>
-			<li><a href="#">Treasurer</a></li>
+			<li><a href="#treasurer-dropdown-toggle" class="sidebar-dropdown-toggle" id="treasurer-dropdown-toggle">Treasurer <span class="caret"></span></a></li>
+				<ul class="sidebar-dropdown-menu" id="treasurer-menu">
+					<li><a href="duesrecord.php">Dues record</a></li>
+				</ul>
 			<li><a href="#secretary-dropdown-toggle" class="sidebar-dropdown-toggle" id="secretary-dropdown-toggle">Secretary <span class="caret"></span></a></li>
 				<ul class="sidebar-dropdown-menu" id="secretary-menu">
-					<li><a href="eventrecord.php">Event record</a></li>
+					<li><a href="eventrecord.php">Event attendance record</a></li>
 					<li><a href="attendancerecord.php">Chapter attendance record</a></li>
 				</ul>
 			<li><a href="#">Warden</a></li>
@@ -36,7 +40,10 @@
 				</ul>
 			<li><a href="#">Chaplain</a></li>
 			<li><a href="#">Philanthropy Chairman</a></li>
-			<li><a href="#">Risk Management Chairman</a></li>
+			<li><a href="#riskmanager-dropdown-toggle" class="sidebar-dropdown-toggle" id="riskmanager-dropdown-toggle">Risk Management Chairman <span class="caret"></span></a></li>
+				<ul class="sidebar-dropdown-menu" id="riskmanager-menu">
+					<li><a href="rmeventrecord.php">Event record</a></li>
+				</ul>
 			<li><a href="#">Standards Board Chairman</a></li>
 			<li><a href="#">Settings</a></li>
 		</ul>

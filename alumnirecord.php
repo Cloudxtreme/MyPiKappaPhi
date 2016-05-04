@@ -18,7 +18,7 @@
 			
             <div class="container-fluid">
                 <div class="row brandon">
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-12 col-sm-9 col-md-5 table-toowide">
 						<h1>Alumni record</h1>
                         <table class="table table-striped">
                             <thead>

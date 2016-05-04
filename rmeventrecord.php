@@ -19,52 +19,38 @@
             <div class="container-fluid">
                 <div class="row brandon">
                     <div class="col-xs-12 col-sm-8 col-md-4">
-						<h1>Event attendance record</h1>
+						<h1>Event record</h1>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Event</th>
                                     <th>Date</th>
-                                    <th>Present</th>
-									<th>Absent</th>
-                                    <th>Excused</th>
+                                    <th>Invited</th>
+									<th>Attended</th>
+                                    <th>Alcohol present</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="info">
-                                    <td>Chapter</td>
-                                    <td>05/01/2016</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-									<td>N/A</td>
-                                </tr>
                                 <tr class="success">
-                                    <td>Chapter</td>
-                                    <td>04/24/2016</td>
-                                    <td>40</td>
-                                    <td>5</td>
-									<td>N/A</td>
-                                </tr>
-                                <tr class="danger">
-                                    <td>Chapter</td>
-                                    <td>04/17/2016</td>
-                                    <td>20</td>
-                                    <td>15</td>
-									<td>10</td>
+                                    <td>King of the Wing</td>
+                                    <td>05/01/2016</td>
+                                    <td>50</td>
+                                    <td>30</td>
+									<td>No</td>
                                 </tr>
                                 <tr class="warning">
-                                    <td>Chapter</td>
-                                    <td>04/10/2016</td>
-                                    <td>25</td>
-                                    <td>8</td>
-									<td>12</td>
+                                    <td>Loggers and Joggers</td>
+                                    <td>04/24/2016</td>
+                                    <td>150</td>
+                                    <td>120</td>
+									<td>Yes</td>
                                 </tr>
-                                <tr class="success">
-                                    <td>Chapter</td>
-                                    <td>04/03/2016</td>
-                                    <td>27</td>
-                                    <td>13</td>
-									<td>5</td>
+                                <tr class="warning">
+                                    <td>Flannels and Handles</td>
+                                    <td>04/17/2016</td>
+                                    <td>110</td>
+                                    <td>85</td>
+									<td>Yes</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -57,7 +57,7 @@
                     </div>
                 </div>
 				<div class="row brandon">
-                    <div class="col-xs-10 col-sm-8 col-md-4">
+                    <div class="col-xs-12 col-sm-8 col-md-4">
 						<h1>Dues record</h1>
                         <table class="table table-hover">
                             <thead>

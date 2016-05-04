@@ -4,6 +4,9 @@
 }
 
 #wrapper {
+	position: absolute;
+	left: 0px;
+	top: 0px;
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -29,6 +32,7 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+	box-shadow: -4px 0px 0px -2px #E7A614 inset;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -72,15 +76,13 @@
     color: #FFF;
 }
 
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
-}
-
+.sidebar-nav li a:hover,
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
+	color: #E7A614;
+	background: #005596;
+	box-shadow: -4px 0px 0px -2px #E7A614 inset;
 }
 
 .sidebar-nav > .sidebar-brand {
@@ -185,11 +187,16 @@ bootstrap css download
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background: rgba(255,255,255,0.2);
+    background: #005596;
+	border-color: #E7A614;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #FFF;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {
+    background-color: #E7A614;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -200,7 +207,6 @@ bootstrap css download
 }
 
 .panel-default {
-    width: 150px;
 	margin-top: 15px;
 }
 
@@ -262,4 +268,14 @@ bootstrap css download
 .button-colored:focus {
 	color: #E7A614;
 	background: #005596;
+}
+
+.table-toowide {
+	overflow: auto;
+	overflow-y: hidden;
+}
+
+#container-index {
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
