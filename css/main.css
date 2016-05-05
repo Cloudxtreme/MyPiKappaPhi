@@ -279,3 +279,10 @@ bootstrap css download
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
+
+.dropdown-toggle:active,
+.dropdown-toggle:visited,
+.dropdown-toggle:focus, {
+	color: #E7A614;
+	background-color: #005596;
+}
