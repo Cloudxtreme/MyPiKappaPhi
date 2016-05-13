@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -13,10 +17,17 @@
         
         <script>
             $(function() {
+                var hours = <?php echo $_SESSION['hours'];?>;
+                var targethours = <?php echo $_SESSION['targethours'];?>;
+                var dues = <?php echo $_SESSION['dues'];?>;
+                var targetdues = <?php echo $_SESSION['targetdues'];?>;
+                var attendance = <?php echo $_SESSION['attendance'];?>;
+                var targetattendance = <?php echo $_SESSION['targetattendance'];?>;
+                
                 window.percent = function() {
-                    $('#radial-service').attr('data-progress', Math.floor(16/16 * 100));
-                    $('#radial-dues').attr('data-progress', Math.floor(320/420 * 100));
-                    $('#radial-attendance').attr('data-progress', Math.floor(3/4 * 100));
+                    $('#radial-service').attr('data-progress', Math.floor(hours/targethours * 100));
+                    $('#radial-dues').attr('data-progress', Math.floor(dues/targetdues * 100));
+                    $('#radial-attendance').attr('data-progress', Math.floor(attendance/targetattendance * 100));
                 }
                 setTimeout(window.percent, 200);
 
@@ -67,7 +78,7 @@
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>16</span>
+                                                <span><?php echo $_SESSION['hours'];?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -95,7 +106,7 @@
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>$320</span>
+                                                <span>$<?php echo $_SESSION['dues'];?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +134,7 @@
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>75%</span>
+                                                <span><?php echo $_SESSION['attendance'];?>%</span>
                                             </div>
                                         </div>
                                     </div>
