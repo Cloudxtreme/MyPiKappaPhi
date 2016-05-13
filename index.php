@@ -1,5 +1,6 @@
-<?php
+<?php 
 session_start();
+include 'checklogin.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +18,7 @@ session_start();
         
         <script>
             $(function() {
-                var hours = <?php echo $_SESSION['hours'];?>;
-                var targethours = <?php echo $_SESSION['targethours'];?>;
-                var dues = <?php echo $_SESSION['dues'];?>;
-                var targetdues = <?php echo $_SESSION['targetdues'];?>;
-                var attendance = <?php echo $_SESSION['attendance'];?>;
-                var targetattendance = <?php echo $_SESSION['targetattendance'];?>;
+                <?php include 'loadvars.php';?>
                 
                 window.percent = function() {
                     $('#radial-service').attr('data-progress', Math.floor(hours/targethours * 100));
@@ -52,7 +48,6 @@ session_start();
 	<body>		
 		<div>
             <?php 
-            include 'checklogin.php';
             include 'navigation.html';
             ?>
             

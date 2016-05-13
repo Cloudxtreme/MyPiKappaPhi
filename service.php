@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include 'checklogin.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -13,8 +18,10 @@
         
         <script>
             $(function() {
+                <?php include 'loadvars.php'?>
+                
                 window.percent = function() {
-                    $('#radial-service').attr('data-progress', Math.floor(16/16 * 100));
+                    $('#radial-service').attr('data-progress', Math.floor(hours/targethours * 100));
                 }
                 setTimeout(window.percent, 200);
             });
@@ -47,7 +54,7 @@
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>16</span>
+                                                <span><?php echo $_SESSION['hours'];?></span>
                                             </div>
                                         </div>
                                     </div>
