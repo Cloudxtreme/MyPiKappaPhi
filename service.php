@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="row brandon">
-                    <div class="col-xs-12 col-sm-8 col-md-4">
+                    <div class="col-xs-12 col-sm-8 col-md-6">
 						<h1>Service record</h1>
                         <table class="table table-hover">
                             <thead>
@@ -106,7 +106,7 @@
 				<div class="modal fade brandon" role="dialog" id="formModal">
 					<div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header" id="modalformheader">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Service hours reporting form</h4>
                             </div> 

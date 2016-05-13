@@ -40,7 +40,10 @@
 
 	<body>		
 		<div>
-            <?php include 'navigation.html';?>
+            <?php 
+            include 'checklogin.php';
+            include 'navigation.html';
+            ?>
             
             <div class="container-fluid" id="container-index">
                 <div class="row">

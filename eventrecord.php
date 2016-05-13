@@ -18,7 +18,7 @@
 			
             <div class="container-fluid">
                 <div class="row brandon">
-                    <div class="col-xs-12 col-sm-8 col-md-4">
+                    <div class="col-xs-12 col-sm-8 col-md-6">
 						<h1>Event attendance record</h1>
                         <table class="table table-hover">
                             <thead>

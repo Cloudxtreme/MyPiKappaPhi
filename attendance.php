@@ -57,7 +57,7 @@
                     </div>
                 </div>
 				<div class="row brandon">
-                    <div class="col-xs-12 col-sm-8 col-md-4">
+                    <div class="col-xs-12 col-sm-8 col-md-6">
 						<h1>Attendance record</h1>
                         <table class="table table-hover">
                             <thead>

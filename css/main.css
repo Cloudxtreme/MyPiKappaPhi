@@ -146,7 +146,7 @@ bootstrap css download
 }
 
 .navbar-default {
-    background-color: #005596;
+    background: #005596;
     font-family: Brandon, sans-serif;
 }
 
@@ -162,6 +162,10 @@ bootstrap css download
 
 .navbar {
 	margin-bottom: 0;
+}
+
+.navbar .nav > li {
+    cursor: pointer;
 }
 
 .navbar .nav > li > a {
@@ -192,18 +196,40 @@ bootstrap css download
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #FFF;
+    background: #FFF;
 }
 
 .navbar-default .navbar-toggle:hover .icon-bar {
-    background-color: #E7A614;
+    background: #E7A614;
 }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #FFF;
-    background: rgba(255,255,255,0.2);
+.dropdown-toggle:active, 
+.open .dropdown-toggle,
+.dropdown-menu,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #E7A614 !important;
+    background: #005596 !important;
+}
+
+.dropdown-menu > li > a {
+    color: #FFF !important;
+    background: #005596 !important;
+}
+
+.navbar-brand.center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+}
+
+#loginpanel {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .panel-default {
@@ -216,11 +242,15 @@ bootstrap css download
 
 .panel-default .panel-heading {
     color: #FFF;
-    background-color: #005596;
+    background: #005596;
 }
 
 .panel-default:hover .panel-heading {
     color: #E7A614;
+}
+
+.panel-default:hover #loginheading {
+    color: #FFF;
 }
 
 .logo {
@@ -242,7 +272,7 @@ bootstrap css download
 }
 
 .btn-primary {
-	background-color: #005596;
+	background: #005596;
 }
 
 .btn-primary:hover,
@@ -253,7 +283,14 @@ bootstrap css download
 }
 
 .modal-form {
+    font-family: Brandon, sans-serif;
 	margin: 10px;
+    color: #E7A614;
+}
+
+#modalformheader {
+    font-family: Brandon, sans-serif;
+    color: #E7A614;
 }
 
 .button-colored {
@@ -284,5 +321,15 @@ bootstrap css download
 .dropdown-toggle:visited,
 .dropdown-toggle:focus, {
 	color: #E7A614;
-	background-color: #005596;
+	background: #005596;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
