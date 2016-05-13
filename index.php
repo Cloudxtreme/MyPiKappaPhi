@@ -21,9 +21,13 @@ include 'checklogin.php';
                 <?php include 'loadvars.php';?>
                 
                 window.percent = function() {
-                    $('#radial-service').attr('data-progress', Math.floor(hours/targethours * 100));
-                    $('#radial-dues').attr('data-progress', Math.floor(dues/targetdues * 100));
-                    $('#radial-attendance').attr('data-progress', Math.floor(attendance/targetattendance * 100));
+                    $('#radial-service').attr('data-progress', Math.floor(Math.min(hours/targethours, 1) * 100));
+                    $('#radial-dues').attr('data-progress', Math.floor(Math.min(dues/targetdues, 1) * 100));
+                    $('#radial-attendance').attr('data-progress', percentattendance);
+                    
+                    $('#servicespan').text(hours);
+                    $('#duesspan').text('$' + dues);
+                    $('#attendancespan').text(percentattendance + '%');
                 }
                 setTimeout(window.percent, 200);
 
@@ -73,7 +77,7 @@ include 'checklogin.php';
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span><?php echo $_SESSION['hours'];?></span>
+                                                <span id="servicespan"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +105,7 @@ include 'checklogin.php';
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>$<?php echo $_SESSION['dues'];?></span>
+                                                <span id="duesspan"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -129,7 +133,7 @@ include 'checklogin.php';
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span><?php echo $_SESSION['attendance'];?>%</span>
+                                                <span id="attendancespan"></span>
                                             </div>
                                         </div>
                                     </div>

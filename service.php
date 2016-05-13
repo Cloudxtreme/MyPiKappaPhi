@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include 'checklogin.php';
+include 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +22,8 @@ include 'checklogin.php';
                 <?php include 'loadvars.php'?>
                 
                 window.percent = function() {
-                    $('#radial-service').attr('data-progress', Math.floor(hours/targethours * 100));
+                    $('#radial-service').attr('data-progress', Math.floor(Math.min(hours/targethours, 1) * 100));
+                    $('#servicespan').text(hours);
                 }
                 setTimeout(window.percent, 200);
             });
@@ -54,7 +56,7 @@ include 'checklogin.php';
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span><?php echo $_SESSION['hours'];?></span>
+                                                <span id="servicespan"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -77,34 +79,33 @@ include 'checklogin.php';
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="warning">
-                                    <td>Replay For Kids</td>
-                                    <td>Disabled children all over ohio</td>
-                                    <td>02/08/2016</td>
-                                    <td>2.5</td>
-                                    <td>Pending</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>Ushering</td>
-                                    <td>Violins of Hope</td>
-                                    <td>09/26/2015</td>
-                                    <td>4.0</td>
-                                    <td>Accepted</td>
-                                </tr>
-                                <tr class="danger">
-                                    <td>Case EMS</td>
-                                    <td>Case community</td>
-                                    <td>09/08/2015</td>
-                                    <td>8.0</td>
-                                    <td>Rejected</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>Nepal Family Day</td>
-                                    <td>Asia Society Hong Kong Center</td>
-                                    <td>06/14/2015</td>
-                                    <td>12.0</td>
-                                    <td>Accepted</td>
-                                </tr>
+                                <?php
+                                $query = 'SELECT activity, benefactor, date, hours, status FROM '.$username.'service';
+                                if($stmt = $conn->prepare($query)) {
+                                    $stmt->execute();
+                                    $stmt->store_result();
+                                    $count = $stmt->num_rows;
+                                    $stmt->bind_result($activity, $benefactor, $date, $hours, $status);
+                                    while($stmt->fetch()) {
+                                        echo '<tr';
+                                        if (!strcmp($status, 'Accepted')) {
+                                            echo ' class = "success">';
+                                        } else if (!strcmp($status, 'Pending')) {
+                                            echo ' class = "warning">';
+                                        } else if (!strcmp($status, 'Rejected')) {
+                                            echo ' class = "danger">';
+                                        } else {
+                                            echo '>';
+                                        }
+                                        echo '<td>'.$activity.'</td>';
+                                        echo '<td>'.$benefactor.'</td>';
+                                        echo '<td>'.$date.'</td>';
+                                        echo '<td>'.$hours.'</td>';
+                                        echo '<td>'.$status.'</td>';
+                                        echo '</tr>';
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
                         <button type="button" class="btn btn-primary-outline button-colored" data-toggle="modal" data-target="#formModal"><span class="glyphicon glyphicon-plus"></span> Submit service hours</button>

@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include 'checklogin.php';
+include 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +19,11 @@ include 'checklogin.php';
         
         <script>
             $(function() {
+                <?php include 'loadvars.php';?>;
+                
                 window.percent = function() {
-                    $('#radial-dues').attr('data-progress', Math.floor(320/420 * 100));
+                    $('#radial-dues').attr('data-progress', Math.floor(Math.min(dues/targetdues, 1) * 100));
+                    $('#duesspan').text('$' + dues);
                 }
                 setTimeout(window.percent, 200);
             });
@@ -52,7 +56,7 @@ include 'checklogin.php';
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>$320</span>
+                                                <span id="duesspan"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -73,26 +77,32 @@ include 'checklogin.php';
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="danger">
-                                    <td>$100</td>
-                                    <td>04/10/2016</td>
-                                    <td>N/A</td>
-                                </tr>
-                                <tr class="warning">
-                                    <td>$100</td>
-                                    <td>03/15/2016</td>
-                                    <td>03/18/2016</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>$100</td>
-                                    <td>02/14/2016</td>
-                                    <td>02/05/2016</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>$120</td>
-                                    <td>01/17/2016</td>
-                                    <td>01/10/2016</td>
-                                </tr>
+                                <?php
+                                $query = 'SELECT amount, date, recieved FROM '.$username.'dues';
+                                if($stmt = $conn->prepare($query)) {
+                                    $stmt->execute();
+                                    $stmt->store_result();
+                                    $count = $stmt->num_rows;
+                                    $stmt->bind_result($amount, $date, $recieved);
+                                    while($stmt->fetch()) {
+                                        echo '<tr';
+                                        if (strcmp($recieved, 'N/A')) {
+                                            if (strtotime($date) >= strtotime($recieved)) {
+                                                echo ' class = "success">';
+                                            } else {
+                                                echo ' class = "warning">';
+                                            }
+                                        } else {
+                                            echo ' class = "danger">';
+                                        }
+                                        
+                                        echo '<td>$'.$amount.'</td>';
+                                        echo '<td>'.$date.'</td>';
+                                        echo '<td>'.$recieved.'</td>';
+                                        echo '</tr>';
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>

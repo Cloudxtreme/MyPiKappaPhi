@@ -21,7 +21,7 @@ session_start();
             <nav class="navbar navbar-default navbar-static-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand center" href="#" id="brand">Pi Kappa Phi: Kappa Alpha</a>
+                        <a class="navbar-brand center" href="#">Pi Kappa Phi: Kappa Alpha</a>
                     </div>
                 </div>
             </nav>
@@ -87,23 +87,12 @@ session_start();
             if (password_verify($password, $result)) {
                 $_SESSION['username'] = $username;
                 
-                $query = 'SELECT hours, targethours, dues, targetdues, attendance, targetattendance FROM memberinfo WHERE username = ?';
-                if($stmt = $conn->prepare($query)) {
-                    $stmt->bind_param("s", $username);
-                    $stmt->execute();
-                    $stmt->store_result();
-                    $count = $stmt->num_rows;
-                    $stmt->bind_result($_SESSION['hours'], $_SESSION['targethours'], $_SESSION['dues'], $_SESSION['targetdues'], $_SESSION['attendance'], $_SESSION['targetattendance']);
-                    $stmt->fetch();
-                }
-                
                 header("Location:index.php");
-                echo "pass";
             } else {
-                echo "wrong password";
+                echo "<center class='brandon' style='color:red'>Invalid username or password</center>";
             }
         } else {
-            echo "wrong username";
+            echo "<center class='brandon' style='color:red'>Invalid username or password</center>";
         }
     }
     ?>

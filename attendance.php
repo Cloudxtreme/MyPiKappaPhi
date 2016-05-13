@@ -18,8 +18,11 @@ include 'checklogin.php';
 		
 		<script>
             $(function() {
+                <?php include 'loadvars.php';?>
+                
                 window.percent = function() {
-                    $('#radial-attendance').attr('data-progress', Math.floor(320/420 * 100));
+                    $('#radial-attendance').attr('data-progress', percentattendance);
+                    $('#attendancespan').text(percentattendance + '%');
                 }
                 setTimeout(window.percent, 200);
             });
@@ -52,7 +55,7 @@ include 'checklogin.php';
                                     <div class="inset">
                                         <div class="percentage">
                                             <div class="numbers">
-                                                <span>75%</span>
+                                                <span id="attendancespan"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -69,41 +72,36 @@ include 'checklogin.php';
                                 <tr>
                                     <th>Event</th>
                                     <th>Date</th>
-                                    <th>Present</th>
-                                    <th>Excused</th>
+                                    <th>Marked</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="info">
-                                    <td>Chapter</td>
-                                    <td>05/01/2016</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>Chapter</td>
-                                    <td>04/24/2016</td>
-                                    <td>Yes</td>
-                                    <td>N/A</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>Chapter</td>
-                                    <td>04/17/2016</td>
-                                    <td>Yes</td>
-                                    <td>N/A</td>
-                                </tr>
-                                <tr class="danger">
-                                    <td>Chapter</td>
-                                    <td>04/10/2016</td>
-                                    <td>No</td>
-                                    <td>No</td>
-                                </tr>
-                                <tr class="warning">
-                                    <td>Chapter</td>
-                                    <td>04/03/2016</td>
-                                    <td>No</td>
-                                    <td>Yes</td>
-                                </tr>
+                                <?php
+                                $query = 'SELECT event, date, marked FROM '.$username.'attendance';
+                                if($stmt = $conn->prepare($query)) {
+                                    $stmt->execute();
+                                    $stmt->store_result();
+                                    $count = $stmt->num_rows;
+                                    $stmt->bind_result($event, $date, $marked);
+                                    while($stmt->fetch()) {
+                                        echo '<tr';
+                                        if (!strcmp($marked, 'Present')) {
+                                            echo ' class = "success">';
+                                        } else if (!strcmp($marked, 'Excused')) {
+                                            echo ' class = "warning">';
+                                        } else if (!strcmp($marked, 'Absent')) {
+                                            echo ' class = "danger">';
+                                        } else {
+                                            echo ' class = "info">';
+                                        }
+                                        
+                                        echo '<td>'.$event.'</td>';
+                                        echo '<td>'.$date.'</td>';
+                                        echo '<td>'.$marked.'</td>';
+                                        echo '</tr>';
+                                    }
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>

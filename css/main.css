@@ -154,8 +154,8 @@ bootstrap css download
     color: #FFF;
 }
 
-.navbar-header .navbar-brand:hover,
-.navbar-header .navbar-brand:focus {
+#brand:hover,
+#brand:focus {
     color: #E7A614;
     background: #005596;
 }
@@ -224,6 +224,7 @@ bootstrap css download
     top: 0;
     text-align: center;
     margin: auto;
+    pointer-events: none;
 }
 
 #loginpanel {
